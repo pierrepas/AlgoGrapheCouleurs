@@ -1,0 +1,24 @@
+Résoudre le problème suivant en utilisant un solveur naïf:
+Description du graphe:
+
+Graph{
+S0 S1 S2 ... Sn
+Si -- Sj
+Sk -- Sl
+.
+.
+.
+}
+
+
+Problème 3 couleurs.
+
+Syntaxe incluse dans Graphviz -> dot (pour visualiser).
+
+Scéance 2: Résoudre le problème avec un algorithme de backtracking.
+
+Algo naif:
+On génère toutes les solutions possibles, puis on les teste.
+
+Pour la prochaine fois:
+Faire les 2 fonctions (naive et backtrack)
