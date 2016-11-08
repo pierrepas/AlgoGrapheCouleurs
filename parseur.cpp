@@ -13,7 +13,7 @@ Graphe parseLigne(string ligne, Graphe g, vector<string> noms){
     int iSommetCourant = -1;
     stringstream fluxLigne(ligne);
     fluxLigne >> sommetCourant;
-    for (int i=0; i= noms.size(); i++){
+    for (int i=0; (i< noms.size()); i++){
         if(sommetCourant.compare(noms[i]) == 0)
             iSommetCourant = i;
     }
@@ -23,7 +23,7 @@ Graphe parseLigne(string ligne, Graphe g, vector<string> noms){
         string sommetMatch;
         int iSommetMatch = -1;
         fluxLigne >> sommetMatch;
-        for(int i=0; i= noms.size(); i++){
+        for(int i=0; (i< noms.size()); i++){
             if(sommetMatch.compare(noms[i]) == 0)
                 iSommetMatch = i;
         }
@@ -51,7 +51,7 @@ vector<string> parseNoms(string s, Graphe g){
 }
 
 //Génère les sommets du graphe en fonction du ficher d'entrée.
-Graphe parseSommets(ifstream in){
+Graphe parseSommets(ifstream & in){
     vector<string> noms;
     Graphe g = Graphe();
     string premiereLigne; // Contient les sommets
@@ -62,4 +62,5 @@ Graphe parseSommets(ifstream in){
         getline(in,ligne);
         g = parseLigne(ligne, g, noms);
     }
+    return g;
 }

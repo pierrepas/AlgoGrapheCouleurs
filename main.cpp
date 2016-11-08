@@ -1,18 +1,18 @@
 #include "graphe.hpp"
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
 #include "sommet.hpp"
+#include "parseur.cpp"
+
 using namespace std;
 
 int main(void){
-    Graphe g = Graphe();
-    g.ajoutSommet();
-    g.ajoutSommet();
-    g.ajoutSommet();
+    ifstream ifs("3C_vrai", ifstream::in);
+    cout << "Ajout des sommets" << endl;
+    Graphe g = parseSommets(ifs);
+    cout << "Sommets Ajoutés" << endl;
     g.afficheSommets();
-    cout << "Ajout des sommets:" << endl;
-    g.ajoutArete(0,1);
-    g.ajoutArete(1,2);
-    g.ajoutArete(2,0);
-    g.afficheSommets();
-
     return 0;
 }

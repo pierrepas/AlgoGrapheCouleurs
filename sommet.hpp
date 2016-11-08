@@ -12,6 +12,7 @@ class Sommet{
         int indice;
 
     public:
+        std::string nom;
         Sommet(int i);
         char getCouleur();
         int getIndice();
