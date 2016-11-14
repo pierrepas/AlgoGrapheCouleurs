@@ -55,6 +55,7 @@ Graphe parseSommets(ifstream & in){
     vector<string> noms;
     Graphe g = Graphe();
     string premiereLigne; // Contient les sommets
+    getline(in, premiereLigne); // Afin d'éliminer la 1ère ligne du fichier graphes
     getline(in, premiereLigne);
     noms = parseNoms(premiereLigne, g);
     string ligne;

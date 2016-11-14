@@ -29,12 +29,14 @@ void Graphe::ajoutArete(int s1, int s2){
 }
 
 void Graphe::afficheSommets(){
+    cout << "Affichage des sommets" << endl;
     for(int i=0; i<sommets.size(); i++){
         sommets[i].afficheVoisins();
     }
 }
 
 bool Graphe::algoNaif(){
+    cout << "Lancement de l'algo naïf" << endl;
     for(int i=0; i<sommets.size(); i++){
         if (!sommets[i].assigneCouleur()){
             return false;
@@ -92,9 +94,11 @@ vector<string> Graphe::parseNoms(string s, Graphe g){
 
 //Génère les sommets du graphe en fonction du ficher d'entrée.
 Graphe Graphe::parseSommets(ifstream & in){
+    cout << "Parsing ... ";
     vector<string> noms;
     Graphe g = Graphe();
     string premiereLigne; // Contient les sommets
+    getline(in, premiereLigne); // pour ignonrer la 1ère ligne du fichier graphes
     getline(in, premiereLigne);
     noms = parseNoms(premiereLigne, g);
     string ligne;
@@ -102,6 +106,7 @@ Graphe Graphe::parseSommets(ifstream & in){
         getline(in,ligne);
         g = parseLigne(ligne, g, noms);
     }
+    cout << "Terminé." << endl;
     return g;
 }
 
