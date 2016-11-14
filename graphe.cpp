@@ -9,8 +9,6 @@
 using namespace std;
 
 
-Graphe::Graphe(){}
-
 void Graphe::ajoutSommet(){
     Sommet s(nbSommets ++);
     sommets.push_back(s);
@@ -106,3 +104,12 @@ Graphe Graphe::parseSommets(ifstream & in){
     }
     return g;
 }
+
+int Graphe::chercheSommet(std::string s){
+    for(int i=0; i<sommets.size(); i++){
+        if(s.compare(sommets[i].nom) == 0){
+            return i;
+        }
+    }
+};
+

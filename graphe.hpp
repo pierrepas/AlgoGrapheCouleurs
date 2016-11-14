@@ -12,7 +12,7 @@ class Graphe{
         int nbSommets;
 
     public :
-        Graphe();
+        //Graphe();
         Graphe parseLigne(std::string ligne, Graphe g, std::vector<std::string> noms);
         std::vector<std::string> parseNoms(std::string s, Graphe g);
         Graphe parseSommets(std::ifstream & in);
@@ -22,5 +22,6 @@ class Graphe{
         void afficheSommets();
         bool algoNaif();
         bool algoOpti();
+        int chercheSommet(std::string s);
 };
 

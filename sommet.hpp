@@ -16,6 +16,7 @@ class Sommet{
         Sommet(int i);
         char getCouleur();
         int getIndice();
+        void ajoutSommet();
         void ajoutSommet(Sommet s);
         void afficheVoisins();
         bool verifNonCouleurAdjacentes();
