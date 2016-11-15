@@ -1,4 +1,17 @@
+instances disponibles:
+instances/3S_vrai: 3 sommets reliés: 3 colorable
+instances/4S_faux: 3 sommets, tous reliés: pas 3 colorable
+instances/5S_pentagramme_faux: 5 sommets, tous reliés: pas 3 colorable
+instances/6S_vrai: 2 graphes de 3 sommets chacuns, reliés par 1 arête. 3 colorable.
+
 Pour compiler le GeT:
-dans src/GeT: $ make
+dans src/GeT/: $ make
 pour l'executer: $ ./solution ../../instances/3C_vrai
 
+Pour compiler le RsT:
+dans src/RsT/: $ make
+pour l'executer: $ ./solution ../../instances/3C_vrai
+
+Pour compiler le 3SAT:
+dans src/3SAT: $ make
+pour l'executer: $ ./solution ../../instances/3C_vrai
