@@ -1,4 +1,4 @@
-CXX=g++ -std=c++11 -c
+CXX=g++ -std=c++11 -c -O3
 
 all: solution
 
