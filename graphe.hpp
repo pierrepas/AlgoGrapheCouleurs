@@ -13,9 +13,9 @@ class Graphe{
 
     public :
         //Graphe();
-        Graphe parseLigne(std::string ligne, Graphe g, std::vector<std::string> noms);
-        std::vector<std::string> parseNoms(std::string s, Graphe g);
-        Graphe parseSommets(std::ifstream & in);
+        void  parseLigne(std::string ligne, std::vector<std::string> noms);
+        std::vector<std::string> parseNoms(std::string s);
+        void parseSommets(std::ifstream & in);
         void ajoutSommet();
         void ajoutSommet(std::string nom);
         void ajoutArete(int s1, int s2);

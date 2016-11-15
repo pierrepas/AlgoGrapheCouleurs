@@ -9,6 +9,11 @@ void Sommet::setCouleur(char c){
     couleur = c;
 }
 
+Sommet::Sommet(string s){
+    couleur = -1;
+    nom = s;
+}
+
 bool Sommet::isAssigned(){
     if( couleur == -1 )
         return false;
@@ -16,12 +21,12 @@ bool Sommet::isAssigned(){
 }
 
 void Sommet::afficheVoisins(){
-    cout << "Couleur de "<< indice <<" : " << (int)couleur << ". ";
-    cout << "Voisins de "<< indice <<" : ";
+    cout << "Couleur de " << nom << " : " << (int)couleur << ". ";
+    cout << "Voisins de " << nom << " : ";
     for(int i=0; i<sommetsAdjacents.size(); i++){
-        cout << sommetsAdjacents[i].getIndice() << ", ";
+        cout << sommetsAdjacents[i]->nom << ", ";
     }
-    if(verifNonCouleurAdjacentes()){
+    if(couleur != -1) {
         cout << "Sommet valide";
     }else{
         cout << "Sommet non valide";
@@ -37,13 +42,8 @@ int Sommet::getIndice(){
     return indice;
 }
 
-void Sommet::ajoutSommet(Sommet s){
-    for(int i=0; i<sommetsAdjacents.size(); i++){
-        if (s.indice == sommetsAdjacents[i].getIndice()){
-            return;
-        }
-    }
-    sommetsAdjacents.push_back(s);
+void Sommet::ajoutSommet(Sommet & s){
+    sommetsAdjacents.push_back(&s);
 }
 
 Sommet::Sommet(int i){
@@ -53,7 +53,7 @@ Sommet::Sommet(int i){
 
 bool Sommet::verifNonCouleurAdjacentes(){
     for(int i=0; i < sommetsAdjacents.size(); i++){
-        if(couleur == sommetsAdjacents[i].getCouleur()){
+        if(couleur == sommetsAdjacents[i]->getCouleur()){
             return 0;
         }
     }
@@ -68,10 +68,18 @@ bool Sommet::assigneCouleur(){
     }
 
     for (int i=0; i<sommetsAdjacents.size(); i++){
-        if(sommetsAdjacents[i].isAssigned())
-            if(sommetsAdjacents[i].assigneCouleur())
-                return false;
+        if(sommetsAdjacents[i]->isAssigned())
+            tabCouleurs[sommetsAdjacents[i]->couleur] = true;
         // Si on ne peut pas assigner de couleur valide aux sommets adjacents,
         // le graphe n'est pas valide.
     }
+
+    for (int i=0; i<NB_COULEURS; i++){
+        if(!tabCouleurs[i]){ // la couleur n'a pas été assignée
+            cout << "indice du tableau: " << i << endl;
+            couleur = i;
+            return true;
+        }
+    }
+    return false;
 }
