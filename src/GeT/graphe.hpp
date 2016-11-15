@@ -20,7 +20,7 @@ class Graphe{
         void ajoutSommet(std::string nom);
         void ajoutArete(int s1, int s2);
         void afficheSommets();
-        bool algoNaif();
+        bool genereEtTeste();
         bool algoOpti();
         int chercheSommet(std::string s);
 };

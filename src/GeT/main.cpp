@@ -17,9 +17,9 @@ int main(int argc, char * argv[]){
     ifstream fichier( argv[1] );
     Graphe g;
     g.parseSommets(fichier);
-    coloriable = g.algoNaif();
+    coloriable = g.genereEtTeste(); // Appel de l'algo naif
     if(coloriable)
         cout << "Le graphe est coloriable, voici une solution possible:" << endl;
     g.afficheSommets();
-    return 0;
+    return coloriable;
 }

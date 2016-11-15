@@ -38,7 +38,7 @@ void Graphe::afficheSommets(){
     }
 }
 
-bool Graphe::algoNaif(){
+bool Graphe::genereEtTeste(){
     cout << "Lancement de l'algo naïf" << endl;
     for(int i=0; i<sommets.size(); i++){
         if (!sommets[i].assigneCouleur()){

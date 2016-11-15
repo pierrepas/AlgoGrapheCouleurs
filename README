@@ -1,0 +1,4 @@
+Pour compiler le GeT:
+dans src/GeT: $ make
+pour l'executer: $ ./solution ../../instances/3C_vrai
+
